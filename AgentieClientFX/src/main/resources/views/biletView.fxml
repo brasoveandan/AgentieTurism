@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="biletLayout" prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: #5DADE2;" xmlns="http://javafx.com/javafx"
+            fx:controller="agentie.client.controller.BiletController">
+    <children>
+        <GridPane layoutX="14.0" layoutY="185.0" prefHeight="175.0" prefWidth="350.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="ID:"/>
+                <Label text="Nume Client:" GridPane.rowIndex="1"/>
+                <Label text="Nume Turiști:" GridPane.rowIndex="2"/>
+                <Label text="Adresă Client:" GridPane.rowIndex="3"/>
+                <Label text="Număr Locuri:" GridPane.rowIndex="4"/>
+                <TextField fx:id="textFieldID" promptText="ID" GridPane.columnIndex="1"/>
+                <TextField fx:id="textFieldNumeClient" opacity="0.9" promptText="Nume Client" GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+                <TextField fx:id="textFieldNumeTuristi" opacity="0.9" promptText="Nume Turisti" GridPane.columnIndex="1"
+                           GridPane.rowIndex="2"/>
+                <TextField fx:id="textFieldAdresaClient" opacity="0.9" promptText="Adresa Client"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="textFieldNumarLocuri" opacity="0.9" promptText="Numar Locuri" GridPane.columnIndex="1"
+                           GridPane.rowIndex="4"/>
+            </children>
+        </GridPane>
+        <Button cancelButton="true" layoutX="405.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleCancel"
+                prefHeight="26.0" prefWidth="150.0" text="Cancel"/>
+        <Button defaultButton="true" layoutX="405.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleOk"
+                prefHeight="26.0" prefWidth="150.0" text="Ok"/>
+        <Text layoutX="35.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cumpărare Bilet"
+              textAlignment="CENTER">
+            <font>
+                <Font size="25.0"/>
+            </font>
+        </Text>
+        <GridPane layoutX="285.0" layoutY="31.0" prefHeight="130.0" prefWidth="300.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="Destinație:"/>
+                <Label text="Dată:" GridPane.rowIndex="1"/>
+                <Label text="Oră:" GridPane.rowIndex="2"/>
+                <TextField fx:id="textFieldDestinatia" GridPane.columnIndex="1"/>
+                <TextField fx:id="textFieldData" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="textFieldOra" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,8 @@
+rootProject.name = 'AgentieTurismSpringRMI'
+include 'AgentieClientFX'
+include 'AgentieModel'
+include 'AgentiePersistence'
+include 'AgentieServer'
+include 'AgentieServices'
+include 'AgentieNetworking'
+

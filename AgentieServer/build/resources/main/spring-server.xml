@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+    <util:properties id="jdbcProps">
+        <prop key="agentie.jdbc.driver">org.sqlite.JDBC</prop>
+        <prop key="agentie.jdbc.url">jdbc:sqlite:D:\\Facultate\\Anul II\\Medii de Proiectare si Programare (MPP)\\Lab\\AgentieTurismSpringRMI\\DateAgentie</prop>
+    </util:properties>
+
+    <bean id="AngajatRepository" class="agentie.persistence.jdbc.AngajatRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="ZborRepository" class="agentie.persistence.jdbc.ZborRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="BiletRepository" class="agentie.persistence.jdbc.BiletRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="agentieService" class="agentie.server.AgentieServicesImplementation">
+        <constructor-arg index="0" ref="AngajatRepository"/>
+        <constructor-arg index="1" ref="ZborRepository"/>
+        <constructor-arg index="2" ref="BiletRepository"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="Agentie"/>
+        <property name="service" ref="agentieService"/>
+        <property name="serviceInterface" value="agentie.services.IAgentieServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+
+</beans>

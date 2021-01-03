@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="sessionLayout" prefHeight="600.0" prefWidth="600.0"
+            style="-fx-background-color: #5DADE2;" xmlns="http://javafx.com/javafx"
+            fx:controller="agentie.client.controller.SessionController">
+    <children>
+        <TableView fx:id="tableViewZbor" layoutX="14.0" layoutY="60.0" opacity="0.8" prefHeight="250.0"
+                   prefWidth="570.0">
+            <columns>
+                <TableColumn fx:id="tableColumnID" prefWidth="48.0" text="ID"/>
+                <TableColumn fx:id="tableColumnDestinatia" prefWidth="104.800048828125" text="Destinatia"/>
+                <TableColumn fx:id="tableColumnData" prefWidth="104.79998779296875" text="Data"/>
+                <TableColumn fx:id="tableColumnOra" prefWidth="82.4000244140625" text="Ora"/>
+                <TableColumn fx:id="tableColumnAeroport" prefWidth="109.5999755859375" text="Aeroport"/>
+                <TableColumn fx:id="tableColumnNumarLocuri" prefWidth="112.0" text="Numar Locuri"/>
+            </columns>
+            <padding>
+                <Insets left="1.0" right="1.0"/>
+            </padding>
+        </TableView>
+        <TableView fx:id="tableViewZborCautare" layoutX="15.0" layoutY="357.0" opacity="0.8" prefHeight="230.0"
+                   prefWidth="570.0">
+            <columns>
+                <TableColumn fx:id="tableColumnID2" prefWidth="48.0" text="ID"/>
+                <TableColumn fx:id="tableColumnDestinatia2" prefWidth="105.60003662109375" text="Destinatia"/>
+                <TableColumn fx:id="tableColumnData2" prefWidth="99.199951171875" text="Data"/>
+                <TableColumn fx:id="tableColumnOra2" prefWidth="77.5999755859375" text="Ora"/>
+                <TableColumn fx:id="tableColumnAeroport2" prefWidth="116.00006103515625" text="Aeroport"/>
+                <TableColumn fx:id="tableColumnNumarLocuri2" prefWidth="113.60003662109375" text="Numar Locuri"/>
+            </columns>
+            <padding>
+                <Insets left="1.0" right="1.0"/>
+            </padding>
+        </TableView>
+        <TextField fx:id="textFieldDestinatia" layoutX="14.0" layoutY="320.0" prefHeight="25.0" prefWidth="120.0"
+                   promptText="Destinatie" AnchorPane.rightAnchor="466.0"/>
+        <TextField fx:id="textFieldDataPlecare" layoutX="140.0" layoutY="320.0" prefHeight="25.0" prefWidth="120.0"
+                   promptText="Data Plecare" AnchorPane.rightAnchor="340.0"/>
+        <Button layoutX="377.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleCumparare" prefHeight="25.0"
+                prefWidth="110.0" text=" Cumparare Bilet" AnchorPane.rightAnchor="112.60000000000002"/>
+        <Button layoutX="500.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="26.0"
+                prefWidth="90.0" text="Logout" AnchorPane.rightAnchor="9.0"/>
+        <Text layoutX="208.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestiune Zboruri">
+            <font>
+                <Font size="25.0"/>
+            </font>
+        </Text>
+        <Button layoutX="268.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleCautare" prefHeight="25.0"
+                prefWidth="100.0" text="Cautare"/>
+    </children>
+</AnchorPane>

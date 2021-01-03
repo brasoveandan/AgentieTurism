@@ -1,0 +1,27 @@
+package agentie.client.controller;
+
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+public class ControllerAlert {
+    private static Logger logger = LogManager.getLogger(ControllerAlert.class.getName());
+
+    public static void showMessage(Stage owner, Alert.AlertType type, String header, String text) {
+        Alert message = new Alert(type);
+        message.setHeaderText(header);
+        message.setContentText(text);
+        message.initOwner(owner);
+        message.showAndWait();
+    }
+
+    public static void showErrorMessage(Stage owner, String text) {
+        Alert message = new Alert(Alert.AlertType.ERROR);
+        message.initOwner(owner);
+        message.setTitle("Eroare");
+        message.setContentText(text);
+        message.showAndWait();
+    }
+}
